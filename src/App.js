@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Salut Frédéric Guerra
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  // state (état, données)
+  const [prenom, setPrenom] = useState("Fred")
+  const [count, setCount] = useState(1)
+
+  // components
+  const handleClick = () => {
+    setCount(count + 1)
+  }
+
+  // affichage (render)
+  return <div>
+
+  </div>
 }
 
 export default App;
