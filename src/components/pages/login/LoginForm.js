@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function LoginForm() {
     // state
     const [prenom, setPrenom] = useState("")
+    // Forcer la redirection lorsque on entre le prénom ( penser a modifier l'url dans Route sur app.js)
+    const navigate = useNavigate()
 
     // components
     const handleSubmit = (event) => {
         event.preventDefault()
-        alert(`Bonjour ${prenom}`)
         setPrenom("")
+        navigate(`order/${prenom}`)
     }
 
     // affichage
@@ -22,10 +24,7 @@ export default function LoginForm() {
             <br />
             <h2>Connectez-vous</h2>
             <input onChange={handleChange} value={prenom} type="text" name="text" id="text" placeholder="Entrez votre prénom..." required />
-
-            <Link to="/order">
-                <button>Accédez à votre espace</button>
-            </Link>
+            <button>Accédez à votre espace</button>
         </form>
     )
 }
