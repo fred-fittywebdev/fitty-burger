@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import styled from 'styled-components'
+import { theme } from '../../../theme'
 
 export default function LoginForm() {
     // state
@@ -19,12 +21,28 @@ export default function LoginForm() {
         setPrenom(event.target.value)
     }
     return (
-        <form action="submit" onSubmit={handleSubmit}>
-            <h1>Bienvenue chez nous !</h1>
-            <br />
-            <h2>Connectez-vous</h2>
-            <input onChange={handleChange} value={prenom} type="text" name="text" id="text" placeholder="Entrez votre prénom..." required />
-            <button>Accédez à votre espace</button>
-        </form>
+        <LoginFormStyled action="submit" onSubmit={handleSubmit}>
+            <div>
+                <h1>Bienvenue chez nous !</h1>
+                <br />
+                <h2>Connectez-vous</h2>
+            </div>
+            <div className='form-wrapper'>
+                <input onChange={handleChange} value={prenom} type="text" name="text" id="text" placeholder="Entrez votre prénom" required />
+                <button>Accédez à mon espace</button>
+            </div>
+        </LoginFormStyled>
     )
 }
+
+// CSS styled-components
+const LoginFormStyled = styled.form`
+    border: 3px solid rebeccapurple; 
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    h1{
+        text-decoration: underline;
+        color: ${theme.colors.red};
+    }
+`
