@@ -46,7 +46,6 @@ export default function LoginForm() {
 
 // CSS styled-components
 const LoginFormStyled = styled.form`
-    border: 3px solid rebeccapurple; 
     text-align: center;
     max-width: 500px;
     min-width: 400px;
