@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { theme } from '../../../theme'
 import { BsPersonCircle } from 'react-icons/bs'
+import { IoChevronForward } from 'react-icons/io5'
 
 export default function LoginForm() {
     // state
@@ -33,14 +34,18 @@ export default function LoginForm() {
                     <BsPersonCircle className='icon' />
                     <input onChange={handleChange} value={prenom} type="text" name="text" id="text" placeholder="Entrez votre prénom" required />
                 </div>
-                <button>Accédez à mon espace</button>
+
+                <button className='login-btn'>
+                    <span>Accédez à mon espace</span>
+                    <IoChevronForward className='icon' />
+                </button>
             </div>
         </LoginFormStyled>
     )
 }
 
 // CSS styled-components
-const LoginFormStyled = styled.div`
+const LoginFormStyled = styled.form`
     border: 3px solid rebeccapurple; 
     text-align: center;
     max-width: 500px;
@@ -86,11 +91,58 @@ const LoginFormStyled = styled.div`
             border: none;
             font-size: 15px;
             color: #17161a;
+            width: 100%;
         }
 
         &::placeholder {
             background: white;
             color: lightgrey;
+        }
+    }
+
+    .login-btn {
+            width: 100%;
+            border: solid 1px red;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            white-space: nowrap;
+            text-decoration: none;
+            line-height: 1;
+
+            padding: 18px 24px;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: 800;
+            color: white;
+            background-color: #ff9f1b;
+            border: 1px solid #ff9f1b;
+
+            &:hover:not(:disabled) {
+                background-color: white;
+                color: #ff9f1b;
+                border: 1px solid #ff9f1b;
+                transition: all 200ms ease-out;
+            }
+
+            &:active {
+                color: white;
+                background-color: #ff9f1b;
+                border: 1px solid #ff9f1b;
+            }
+
+            &:disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+            }
+
+            .icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 15px;
+                margin-left: 10px;
         }
     }
 `
