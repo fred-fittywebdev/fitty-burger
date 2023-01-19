@@ -4,14 +4,13 @@ export default function Logo() {
     return (
         <LogoStyled>
             <h1>FITTY</h1>
-            <img src="/images/logo-orange.png" alt="" />
+            <img src="/images/logo-orange.png" alt="Lofo fitty burger" />
             <h1>BURGER</h1>
         </LogoStyled>
     )
 }
 
 const LogoStyled = styled.div`
-border: 1px solid blueviolet;
 display: flex;
 align-items: center;
 transform: scale(2.5);
@@ -32,7 +31,7 @@ img {
     object-fit: contain;
     object-position: center;
     height: 60px;
-    widows: 80px;
+    width: 80px;
     margin: 0 5px
 }
 `
