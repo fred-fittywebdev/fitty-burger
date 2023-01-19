@@ -24,7 +24,7 @@ export default function LoginForm() {
         <LoginFormStyled action="submit" onSubmit={handleSubmit}>
             <div>
                 <h1>Bienvenue chez nous !</h1>
-                <br />
+                <hr />
                 <h2>Connectez-vous</h2>
             </div>
             <div className='form-wrapper'>
@@ -36,13 +36,30 @@ export default function LoginForm() {
 }
 
 // CSS styled-components
-const LoginFormStyled = styled.form`
+const LoginFormStyled = styled.div`
     border: 3px solid rebeccapurple; 
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
+    text-align: center;
+    max-width: 500px;
+    min-width: 400px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    border-radius: 5px;
+    font-family: "Amatic SC", cursive;
+
+    hr {
+        border: 1.5px solid #f56a2c;
+        margin-bottom: 4px;
+    }
+
     h1{
-        text-decoration: underline;
-        color: ${theme.colors.red};
+        color: white;
+        font-size: 48px;
+    }
+
+    h2 {
+        color: 8e8b8b;
+        margin: 20px 10px 10px;
+        color: white;
+        font-size: 36px;
     }
 `
