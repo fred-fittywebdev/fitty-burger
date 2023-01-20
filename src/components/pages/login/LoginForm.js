@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { theme } from '../../../theme'
 import { BsPersonCircle } from 'react-icons/bs'
 import { IoChevronForward } from 'react-icons/io5'
-import Input from './Input'
+import TextInput from './TexInput'
 
 export default function LoginForm() {
     // state
@@ -31,7 +31,7 @@ export default function LoginForm() {
                 <h2>Connectez-vous</h2>
             </div>
             <div>
-                <Input value={prenom} onChange={handleChange} placeholder={"Entrez votre prénom"} required Icon={<BsPersonCircle className='icon' />} />
+                <TextInput value={prenom} onChange={handleChange} placeholder={"Entrez votre prénom"} required Icon={<BsPersonCircle className='icon' />} />
                 <button className='login-btn'>
                     <span>Accédez à mon espace</span>
                     <IoChevronForward className='icon' />
