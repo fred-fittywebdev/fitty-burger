@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { theme } from '../../../theme'
 import { BsPersonCircle } from 'react-icons/bs'
 import { IoChevronForward } from 'react-icons/io5'
+import Input from './Input'
 
 export default function LoginForm() {
     // state
@@ -29,12 +30,8 @@ export default function LoginForm() {
                 <hr />
                 <h2>Connectez-vous</h2>
             </div>
-            <div className='form-wrapper'>
-                <div className='input-container'>
-                    <BsPersonCircle className='icon' />
-                    <input onChange={handleChange} value={prenom} type="text" name="text" id="text" placeholder="Entrez votre prénom" required />
-                </div>
-
+            <div>
+                <Input value={prenom} onChange={handleChange} placeholder={"Entrez votre prénom"} required Icon={<BsPersonCircle className='icon' />} />
                 <button className='login-btn'>
                     <span>Accédez à mon espace</span>
                     <IoChevronForward className='icon' />
@@ -46,7 +43,6 @@ export default function LoginForm() {
 
 // CSS styled-components
 const LoginFormStyled = styled.form`
-    border: 3px solid rebeccapurple; 
     text-align: center;
     max-width: 500px;
     min-width: 400px;
@@ -70,34 +66,6 @@ const LoginFormStyled = styled.form`
         margin: 20px 10px 10px;
         color: white;
         font-size: 36px;
-    }
-
-    .input-container {
-        border: 1 px solid sandybrown;
-        background-color: #fff;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        padding: 18px 24px;
-        margin: 18px 0;
-
-        .icon {
-            color: #93a2b1;
-            font-size: 15px;
-            margin-right: 8px;
-        }
-
-        input {
-            border: none;
-            font-size: 15px;
-            color: #17161a;
-            width: 100%;
-        }
-
-        &::placeholder {
-            background: white;
-            color: lightgrey;
-        }
     }
 
     .login-btn {
