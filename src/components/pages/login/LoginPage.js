@@ -2,6 +2,7 @@ import LoginForm from "./LoginForm"
 
 import styled from "styled-components"
 import Logo from "../../reusable-ui/Logo"
+import { theme } from "../../../theme"
 
 export default function LoginPage() {
     return (
@@ -13,7 +14,7 @@ export default function LoginPage() {
 }
 
 const LoginPageStyled = styled.div`
-background: url("/images/burger-background.jpg") rgba(0, 0, 0, 0.7);
+background: url(${theme.images.heroBackground}) rgba(0, 0, 0, 0.7);
 background-size: cover;
 background-position: center;
 background-blend-mode: darken;
