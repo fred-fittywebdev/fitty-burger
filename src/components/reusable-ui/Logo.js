@@ -1,20 +1,19 @@
 import styled from 'styled-components';
 import { theme } from '../../theme';
 
-export default function Logo() {
-    return (
-        <LogoStyled>
-            <h1>FITTY</h1>
-            <img src={theme.images.logo} alt="Lofo fitty burger" />
-            <h1>BURGER</h1>
-        </LogoStyled>
-    );
+export default function Logo({ className }) {
+	return (
+		<LogoStyled className={className}>
+			<h1>FITTY</h1>
+			<img src={theme.images.logo} alt="Lofo fitty burger" />
+			<h1>BURGER</h1>
+		</LogoStyled>
+	);
 }
 
 const LogoStyled = styled.div`
 	display: flex;
 	align-items: center;
-	transform: scale(2.5);
 
 	h1 {
 		display: inline;
