@@ -47,7 +47,6 @@ export default function LoginForm() {
             </div>
             <div>
                 <TextInput value={prenom} onChange={handleChange} placeholder={"Entrez votre prénom"} required Icon={<BsPersonCircle className='icon' />} />
-                {/* <PasswordInput type={"password"} onChange={passwordChange} value={password} placeholder={"Entrez votre mot de passe"} required Icon={<BsFillKeyFill className='icon' />} /> */}
                 <PrimaryButton label={"Accéder à mon espace"} Icon={<IoChevronForward className='icon' />} />
             </div>
         </LoginFormStyled>
