@@ -9,7 +9,7 @@ export default function TextInput({ value, onChange, Icon, ...extraProps }) {
         <div>
             <InputStyled>
                 {Icon && Icon}
-                <input onChange={onChange} value={value} {...extraProps} />
+                <input type="text" onChange={onChange} value={value} {...extraProps} />
             </InputStyled>
         </div>
     )

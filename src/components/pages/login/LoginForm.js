@@ -12,7 +12,7 @@ import PrimaryButton from '../../reusable-ui/PrimaryButton'
 export default function LoginForm() {
     // state
     const [prenom, setPrenom] = useState("")
-    const [password, setPassword] = useState("")
+    // const [password, setPassword] = useState("")
     // Forcer la redirection lorsque on entre le prénom ( penser a modifier l'url dans Route sur app.js)
     const navigate = useNavigate()
 
@@ -20,10 +20,11 @@ export default function LoginForm() {
     const handleSubmit = (event) => {
         event.preventDefault()
         setPrenom("")
-        if (password === "admin") {
-            navigate(`order/${prenom}`)
-            setPassword("")
-        }
+        navigate(`order/${prenom}`)
+        // if (password === "admin") {
+        //     navigate(`order/${prenom}`)
+        //     setPassword("")
+        // }
 
     }
 
@@ -46,7 +47,6 @@ export default function LoginForm() {
             </div>
             <div>
                 <TextInput value={prenom} onChange={handleChange} placeholder={"Entrez votre prénom"} required Icon={<BsPersonCircle className='icon' />} />
-                {/* <PasswordInput type={"password"} onChange={passwordChange} value={password} placeholder={"Entrez votre mot de passe"} required Icon={<BsFillKeyFill className='icon' />} /> */}
                 <PrimaryButton label={"Accéder à mon espace"} Icon={<IoChevronForward className='icon' />} />
             </div>
         </LoginFormStyled>
