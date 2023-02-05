@@ -5,9 +5,9 @@ import Profile from './Profile';
 
 export default function NavbarRight({ prenom }) {
     return (
-        <NavbarRightStyled>
+        <NavbarRightStyled prenom={prenom}>
             {/*<div className="admin-btn">Admin button</div>*/}
-            <Profile />
+            <Profile prenom={prenom} />
         </NavbarRightStyled>
     )
 }

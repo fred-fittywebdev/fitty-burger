@@ -4,12 +4,12 @@ import styled from "styled-components"
 import { theme } from "../../../theme"
 
 
-export default function Profile({ username }) {
+export default function Profile({ prenom }) {
     return (
         <ProfileStyled>
             <div className="info">
                 <p>
-                    Hey, <b>{username}</b>
+                    Hey, <b>{prenom}</b>
                 </p>
                 <Link to="/">
                     <div className="description">
